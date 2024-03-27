@@ -1,17 +1,19 @@
-import { signIn } from "@/auth/auth";
+"use client"
+
 import { Button } from "@/components/ui/button";
 import { LogIn } from "lucide-react";
-export const SignInButton =()=>{
-  return <form>
+import { signInAction } from "./auth.action";
+export const SignInButton = () =>{
+  return( <form>
     <Button 
   variant ="secondary"
   size="sm"
-  formAction={async ()=>{
-    "use server";
-    await  signIn();
+  onClick={async ()=>{
+
+    await  signInAction();
   }}>
     <LogIn size={16} className="mr-2"/>
     Sign In
    </Button>
-  </form>
+  </form>)
 } 
